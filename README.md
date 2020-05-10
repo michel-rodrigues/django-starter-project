@@ -29,7 +29,7 @@ https://docs.celeryproject.org/en/stable/getting-started/next-steps.html#using-c
     docker-compose up
     ```
 
-- Subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP do terminal):
+- Subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP no terminal):
 
     ```sh
     docker-compose up -d
@@ -41,7 +41,7 @@ https://docs.celeryproject.org/en/stable/getting-started/next-steps.html#using-c
     docker-compose up --build
     ```
 
-- Crir imagen, subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP do terminal):
+- Crir imagen, subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP no terminal):
 
     ```sh
     docker-compose up -d --build
