@@ -4,7 +4,7 @@
 
 - Acessar eventos dos celery:
 
-    - acesse o container django e execute:
+    - [acesse o container django](#acessar-o-container-django) e execute:
 
     ```sh
     $ celery events -A project_configuration -f /tmp/celery.log
@@ -47,7 +47,7 @@ https://docs.celeryproject.org/en/stable/getting-started/next-steps.html#using-c
     $ docker-compose up -d --build
     ```
 
-- Acessar o container django
+### Acessar o container django
 
     ```sh
     $ docker-compose exec django /bin/bash
