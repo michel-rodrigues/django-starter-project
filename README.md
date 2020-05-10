@@ -1,5 +1,3 @@
-# Viggio - Backend
-
 ### Desenvolvimento
 
 1. Renomeie *.env-template* para *.env* e *.env.db-template* para *.env.db* e atualize os valores.
