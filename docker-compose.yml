@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  django:
+    container_name: site_app
+    build: .
+    image: site_app:latest
+    volumes:
+      - ./app/:/usr/src/app/
+      - static_volume:/usr/src/staticfiles
+      - media_volume:/usr/src/mediafiles
+    ports:
+      - 8000:8000
+    env_file: .env
+    depends_on:
+      - postgresql
+    networks:
+      site-app-network:
+        ipv4_address: 172.28.0.6
+  postgresql:
+    container_name: site_db
+    image: postgres:11.2-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file: .env.db
+    networks:
+      site-app-network:
+        ipv4_address: 172.28.0.7
+
+networks:
+  site-app-network:
+    name: site-app-network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
+
+volumes:
+  postgres_data:
+     name: site_db
+  static_volume:
+     name: site_staticfiles
+  media_volume:
+     name: site_mediafiles
