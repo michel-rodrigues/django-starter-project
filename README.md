@@ -7,7 +7,7 @@
     - [acesse o container django](#acessar-o-container-django) e execute:
 
     ```sh
-    $ celery events -A project_configuration -f /tmp/celery.log
+    celery events -A project_configuration -f /tmp/celery.log
     ```
 
 https://docs.celeryproject.org/en/stable/getting-started/next-steps.html#using-celery-in-your-application
@@ -20,37 +20,39 @@ https://docs.celeryproject.org/en/stable/getting-started/next-steps.html#using-c
 - Criar as imagens:
 
     ```sh
-    $ docker-compose build
+    docker-compose build
     ```
 
 - Subir o container e iniciar o webserver dev (exibe output das requisições HTTP do terminal):
 
     ```sh
-    $ docker-compose up
+    docker-compose up
     ```
 
 - Subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP do terminal):
 
     ```sh
-    $ docker-compose up -d
+    docker-compose up -d
     ```
 
 - Crir imagen, subir o container e iniciar o webserver dev:
 
     ```sh
-    $ docker-compose up --build
+    docker-compose up --build
     ```
 
 - Crir imagen, subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP do terminal):
 
     ```sh
-    $ docker-compose up -d --build
+    docker-compose up -d --build
     ```
 
 ### Acessar o container django
 
+- Acessar o container da aplicação:
+
     ```sh
-    $ docker-compose exec django /bin/bash
+    docker-compose exec django /bin/bash
     ```
 
 
