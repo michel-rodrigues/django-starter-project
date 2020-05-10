@@ -14,7 +14,7 @@
     $ docker-compose up
     ```
 
-- Subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP do terminal):
+- Subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP no terminal):
 
     ```sh
     $ docker-compose up -d
@@ -26,7 +26,7 @@
     $ docker-compose up --build
     ```
 
-- Crir imagen, subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP do terminal):
+- Crir imagen, subir o container e iniciar o webserver dev rodando em segundo plano (NÃO exibe output das requisições HTTP no terminal):
 
     ```sh
     $ docker-compose up -d --build
@@ -46,6 +46,6 @@ User = get_user_model()
 https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#referencing-the-user-model
 
 
-### Versão com Redis e Celery
+### Versão com Celery e Redis configurado como broker
 
-Altere para a branch redis-celery
+- Altere para a branch redis-celery

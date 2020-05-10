@@ -19,7 +19,7 @@ services:
         ipv4_address: 172.28.0.6
   postgresql:
     container_name: site_db
-    image: postgres:11.2-alpine
+    image: postgres:12.2-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data
     env_file: .env.db
