@@ -1,3 +1,18 @@
+### Celery e Redis configurado como broker
+
+- Importe project_configuration.celery.app e decore a função com @app.task
+
+- Acessar eventos dos celery:
+
+    - acesse o container django e execute:
+
+    ```sh
+    $ celery events -A project_configuration -f /tmp/celery.log
+    ```
+
+https://docs.celeryproject.org/en/stable/getting-started/next-steps.html#using-celery-in-your-application
+
+
 ### Desenvolvimento
 
 1. Renomeie *.env-template* para *.env* e *.env.db-template* para *.env.db* e atualize os valores.
@@ -32,6 +47,12 @@
     $ docker-compose up -d --build
     ```
 
+- Acessar o container django
+
+    ```sh
+    $ docker-compose exec django /bin/bash
+    ```
+
 
 ### Model User
 
@@ -44,8 +65,3 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 ```
 https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#referencing-the-user-model
-
-
-### Versão com Redis e Celery
-
-Altere para a branch redis-celery

@@ -14,18 +14,32 @@ services:
     env_file: .env
     depends_on:
       - postgresql
+      - redis
     networks:
       site-app-network:
         ipv4_address: 172.28.0.6
   postgresql:
     container_name: site_db
-    image: postgres:11.2-alpine
+    image: postgres:12.2-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data
     env_file: .env.db
     networks:
       site-app-network:
         ipv4_address: 172.28.0.7
+  redis:
+    container_name: site_redis
+    image: redis:6.0.1-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    sysctls:
+      - net.core.somaxconn=1024
+    ports:
+      - 6379:6379
+    networks:
+      site-app-network:
+        ipv4_address: 172.28.0.8
 
 networks:
   site-app-network:
@@ -38,6 +52,8 @@ networks:
 volumes:
   postgres_data:
      name: site_db
+  redis_data:
+     name: site_redis
   static_volume:
      name: site_staticfiles
   media_volume:

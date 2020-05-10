@@ -15,6 +15,7 @@ fi
 python manage.py makemigrations
 python manage.py migrate
 python manage.py collectstatic --no-input --clear
+supervisord -c supervisord.conf
 python manage.py runserver 0.0.0.0:8000 --settings=project_configuration.settings.development
 
 exec "$@"
